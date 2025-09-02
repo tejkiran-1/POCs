@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocationTrackingEcosystem", "LocationTrackingEcosystem", "{FD431564-1958-0D92-39DE-1A7A57C75B94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{670D2160-4388-1D71-96A5-FF5C92D75858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTrackingApi", "LocationTrackingEcosystem\Backend\LocationTrackingApi\LocationTrackingApi.csproj", "{6448DF10-CF63-674E-1E2C-5A2D3405BC34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{9E50C405-C9D3-FC2A-5F93-25F96E8B16EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTrackerApp", "LocationTrackingEcosystem\Mobile\LocationTrackerApp\LocationTrackerApp.csproj", "{B07F10CC-7472-17AF-050E-2CE77546DAB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6448DF10-CF63-674E-1E2C-5A2D3405BC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6448DF10-CF63-674E-1E2C-5A2D3405BC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6448DF10-CF63-674E-1E2C-5A2D3405BC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6448DF10-CF63-674E-1E2C-5A2D3405BC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07F10CC-7472-17AF-050E-2CE77546DAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07F10CC-7472-17AF-050E-2CE77546DAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07F10CC-7472-17AF-050E-2CE77546DAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07F10CC-7472-17AF-050E-2CE77546DAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{670D2160-4388-1D71-96A5-FF5C92D75858} = {FD431564-1958-0D92-39DE-1A7A57C75B94}
+		{6448DF10-CF63-674E-1E2C-5A2D3405BC34} = {670D2160-4388-1D71-96A5-FF5C92D75858}
+		{9E50C405-C9D3-FC2A-5F93-25F96E8B16EC} = {FD431564-1958-0D92-39DE-1A7A57C75B94}
+		{B07F10CC-7472-17AF-050E-2CE77546DAB0} = {9E50C405-C9D3-FC2A-5F93-25F96E8B16EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D82E2B22-9BA2-443E-B96F-0D23C405D475}
+	EndGlobalSection
+EndGlobal

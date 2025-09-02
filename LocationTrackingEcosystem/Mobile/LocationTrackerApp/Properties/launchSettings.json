@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "Android": {
+      "commandName": "MauiAndroid",
+      "launchBrowser": false
+    },
+    "iOS": {
+      "commandName": "MauiIOS", 
+      "launchBrowser": false
+    },
+    "MacCatalyst": {
+      "commandName": "MauiMacCatalyst",
+      "launchBrowser": false
+    },
+    "Windows Machine": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}

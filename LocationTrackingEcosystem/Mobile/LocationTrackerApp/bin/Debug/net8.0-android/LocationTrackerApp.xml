@@ -1,0 +1,903 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LocationTrackerApp</name>
+    </assembly>
+    <members>
+        <member name="T:LocationTrackerApp.Converters.InvertedBoolConverter">
+            <summary>
+            Converter to invert boolean values for UI binding
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Converters.IsNotNullConverter">
+            <summary>
+            Converter to check if an object is not null
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Converters.BoolToLocationIconConverter">
+            <summary>
+            Converter to show appropriate location icon based on sharing status
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Converters.BoolToVisibilityConverter">
+            <summary>
+            Converter to show/hide elements based on boolean values
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.RegisterRequest">
+            <summary>
+            Data Transfer Object for user registration
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.RegisterRequest.Email">
+            <summary>
+            User's email address
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.RegisterRequest.Password">
+            <summary>
+            User's chosen password
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.RegisterRequest.ConfirmPassword">
+            <summary>
+            Password confirmation
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.RegisterRequest.FirstName">
+            <summary>
+            User's first name
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.RegisterRequest.LastName">
+            <summary>
+            User's last name
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.LoginRequest">
+            <summary>
+            Data Transfer Object for user login
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LoginRequest.Email">
+            <summary>
+            User's email address
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LoginRequest.Password">
+            <summary>
+            User's password
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LoginRequest.RememberMe">
+            <summary>
+            Whether to remember the user's login
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.AuthResponse">
+            <summary>
+            Authentication response from the API
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.AuthResponse.IsSuccess">
+            <summary>
+            Whether the authentication was successful
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.AuthResponse.Token">
+            <summary>
+            JWT access token
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.AuthResponse.Expiration">
+            <summary>
+            Token expiration time
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.AuthResponse.User">
+            <summary>
+            User information
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.AuthResponse.Message">
+            <summary>
+            Response message (success or error)
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.LocationUpdateRequest">
+            <summary>
+            Data Transfer Object for location updates
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Latitude">
+            <summary>
+            GPS latitude coordinate in decimal degrees
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Longitude">
+            <summary>
+            GPS longitude coordinate in decimal degrees
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Accuracy">
+            <summary>
+            Optional accuracy of the GPS reading in meters
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Altitude">
+            <summary>
+            Optional altitude in meters above sea level
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Speed">
+            <summary>
+            Optional speed in meters per second
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Bearing">
+            <summary>
+            Optional bearing/heading in degrees (0-360)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationUpdateRequest.Timestamp">
+            <summary>
+            Timestamp when the location was recorded
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.LocationResponse">
+            <summary>
+            Location data response from API
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Id">
+            <summary>
+            Unique identifier for the location record
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.UserId">
+            <summary>
+            User ID who owns this location
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Latitude">
+            <summary>
+            GPS latitude coordinate
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Longitude">
+            <summary>
+            GPS longitude coordinate
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Accuracy">
+            <summary>
+            GPS accuracy in meters
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Altitude">
+            <summary>
+            Altitude in meters
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Speed">
+            <summary>
+            Speed in meters per second
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Bearing">
+            <summary>
+            Bearing in degrees
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.LocationResponse.Timestamp">
+            <summary>
+            When the location was recorded
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.DeviceLocation">
+            <summary>
+            Current device location information
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Latitude">
+            <summary>
+            Current latitude
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Longitude">
+            <summary>
+            Current longitude
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Accuracy">
+            <summary>
+            Location accuracy in meters
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Altitude">
+            <summary>
+            Altitude in meters
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Speed">
+            <summary>
+            Speed in meters per second
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Bearing">
+            <summary>
+            Bearing in degrees
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.Timestamp">
+            <summary>
+            When the location was obtained
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.DeviceLocation.IsAccurate">
+            <summary>
+            Whether this location is considered accurate enough
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Models.User">
+            <summary>
+            Represents a user in the location tracking system
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.Id">
+            <summary>
+            Unique identifier for the user
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.Email">
+            <summary>
+            User's email address (also serves as username)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.UserName">
+            <summary>
+            User's display name
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.FirstName">
+            <summary>
+            User's first name
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.LastName">
+            <summary>
+            User's last name
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.FullName">
+            <summary>
+            Full display name
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.CurrentLatitude">
+            <summary>
+            Current latitude position (if available)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.CurrentLongitude">
+            <summary>
+            Current longitude position (if available)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.IsOnline">
+            <summary>
+            Whether the user is currently online and sharing location
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.IsLocationSharing">
+            <summary>
+            Whether the user is currently sharing their location
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.LastLocationUpdate">
+            <summary>
+            When the user's location was last updated
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Models.User.CreatedAt">
+            <summary>
+            When the user account was created
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Services.IAuthService">
+            <summary>
+            Service for handling authentication operations with the backend API
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.IAuthService.RegisterAsync(LocationTrackerApp.Models.RegisterRequest)">
+            <summary>
+            Register a new user account
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.IAuthService.LoginAsync(LocationTrackerApp.Models.LoginRequest)">
+            <summary>
+            Login with email and password
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.IAuthService.LogoutAsync">
+            <summary>
+            Logout the current user
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.IAuthService.GetCurrentUserAsync">
+            <summary>
+            Get the current user's information
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Services.IAuthService.IsAuthenticated">
+            <summary>
+            Check if user is currently authenticated
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Services.IAuthService.CurrentToken">
+            <summary>
+            Get the current JWT token
+            </summary>
+        </member>
+        <member name="E:LocationTrackerApp.Services.IAuthService.AuthenticationStateChanged">
+            <summary>
+            Event fired when authentication state changes
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Services.AuthService">
+            <summary>
+            Implementation of authentication service
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.RegisterAsync(LocationTrackerApp.Models.RegisterRequest)">
+            <summary>
+            Register a new user account
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.LoginAsync(LocationTrackerApp.Models.LoginRequest)">
+            <summary>
+            Login with email and password
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.LogoutAsync">
+            <summary>
+            Logout the current user
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.GetCurrentUserAsync">
+            <summary>
+            Get the current user's information
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.InitializeAsync">
+            <summary>
+            Initialize the service by checking for stored token
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.StoreTokenAsync(System.String)">
+            <summary>
+            Store the JWT token securely
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.AuthService.SetAuthHeader">
+            <summary>
+            Set the authorization header for HTTP requests
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Services.ILocationService">
+            <summary>
+            Service for handling GPS location operations
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.GetCurrentLocationAsync">
+            <summary>
+            Get the current device location
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.UpdateLocationAsync(LocationTrackerApp.Models.LocationUpdateRequest)">
+            <summary>
+            Send location update to the backend API
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.CheckLocationPermissionAsync">
+            <summary>
+            Check if location permissions are granted
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.RequestLocationPermissionAsync">
+            <summary>
+            Request location permissions from the user
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.StartLocationTrackingAsync">
+            <summary>
+            Start continuous location tracking
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.ILocationService.StopLocationTrackingAsync">
+            <summary>
+            Stop continuous location tracking
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.Services.ILocationService.IsTrackingActive">
+            <summary>
+            Whether location tracking is currently active
+            </summary>
+        </member>
+        <member name="E:LocationTrackerApp.Services.ILocationService.LocationUpdated">
+            <summary>
+            Event fired when location is updated
+            </summary>
+        </member>
+        <member name="E:LocationTrackerApp.Services.ILocationService.TrackingStatusChanged">
+            <summary>
+            Event fired when location tracking status changes
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.Services.LocationService">
+            <summary>
+            Implementation of location service
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.GetCurrentLocationAsync">
+            <summary>
+            Get the current device location
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.UpdateLocationAsync(LocationTrackerApp.Models.LocationUpdateRequest)">
+            <summary>
+            Send location update to the backend API
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.CheckLocationPermissionAsync">
+            <summary>
+            Check if location permissions are granted
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.RequestLocationPermissionAsync">
+            <summary>
+            Request location permissions from the user
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.StartLocationTrackingAsync">
+            <summary>
+            Start continuous location tracking
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.StopLocationTrackingAsync">
+            <summary>
+            Stop continuous location tracking
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.UpdateLocationPeriodically">
+            <summary>
+            Periodic location update method
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.Services.LocationService.Dispose">
+            <summary>
+            Dispose of resources
+            </summary>
+        </member>
+        <member name="T:LocationTrackerApp.ViewModels.LoginViewModel">
+            <summary>
+            ViewModel for the Login page with modern MVVM implementation
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.LoginViewModel.LoginAsync">
+            <summary>
+            Command to handle login action
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.LoginViewModel.NavigateToRegisterAsync">
+            <summary>
+            Command to navigate to register page
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.Email">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.email"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.RememberMe">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.rememberMe"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.IsLoading">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.isLoading"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.ErrorMessage">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.errorMessage"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.HasError">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.LoginViewModel.hasError"/>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.LoginViewModel.OnEmailChanged(System.String)">
+            <summary>
+            Clear error message when user starts typing
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.LoginViewModel.OnPasswordChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LocationTrackerApp.ViewModels.LoginViewModel.Password"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LocationTrackerApp.ViewModels.LoginViewModel.Password"/> is changed.</remarks>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.LoginViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.LoginViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.LoginViewModel.LoginAsync"/>.</summary>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.LoginViewModel.navigateToRegisterCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.LoginViewModel.NavigateToRegisterCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.LoginViewModel.NavigateToRegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.LoginViewModel.NavigateToRegisterAsync"/>.</summary>
+        </member>
+        <member name="T:LocationTrackerApp.ViewModels.RegisterViewModel">
+            <summary>
+            ViewModel for the Register page with modern MVVM implementation
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.FullName">
+            <summary>
+            Full name property for UI binding (combines first and last name)
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.RegisterAsync">
+            <summary>
+            Command to handle registration action
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.NavigateToLoginAsync">
+            <summary>
+            Command to navigate back to login page
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.FirstName">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.firstName"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.LastName">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.lastName"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.Email">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.email"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.Password">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.password"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.ConfirmPassword">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.confirmPassword"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.IsLoading">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.isLoading"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.ErrorMessage">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.errorMessage"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.HasError">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.RegisterViewModel.hasError"/>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.OnFirstNameChanged(System.String)">
+            <summary>
+            Clear error message when user starts typing
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.OnLastNameChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.LastName"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.LastName"/> is changed.</remarks>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.OnEmailChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.Email"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.Email"/> is changed.</remarks>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.OnPasswordChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.Password"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.Password"/> is changed.</remarks>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.RegisterViewModel.OnConfirmPasswordChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.ConfirmPassword"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.ConfirmPassword"/> is changed.</remarks>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.RegisterViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.RegisterViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.RegisterViewModel.navigateToLoginCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.RegisterViewModel.NavigateToLoginCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.RegisterViewModel.NavigateToLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.RegisterViewModel.NavigateToLoginAsync"/>.</summary>
+        </member>
+        <member name="T:LocationTrackerApp.ViewModels.TrackingViewModel">
+            <summary>
+            ViewModel for the main tracking page with modern MVVM implementation
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.CurrentLatitude">
+            <summary>
+            Current latitude for UI binding
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.CurrentLongitude">
+            <summary>
+            Current longitude for UI binding
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.ToggleTrackingCommand">
+            <summary>
+            Alias command for ToggleLocationSharing (used by UI)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.UpdateLocationCommand">
+            <summary>
+            Alias command for RefreshLocation (used by UI)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.TrackingStatusText">
+            <summary>
+            Alias property for StatusMessage (used by UI)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.ErrorMessage">
+            <summary>
+            Alias property for StatusMessage (used by UI for error display)
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.HasError">
+            <summary>
+            Check if there's an error message to display
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.InitializeAsync">
+            <summary>
+            Initialize the view model
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.ToggleLocationSharingAsync">
+            <summary>
+            Command to toggle location sharing
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.RefreshLocationAsync">
+            <summary>
+            Command to refresh current location
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.LogoutAsync">
+            <summary>
+            Command to logout
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.OnLocationUpdated(System.Object,LocationTrackerApp.Models.DeviceLocation)">
+            <summary>
+            Handle location updates from the service
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.OnTrackingStatusChanged(System.Object,System.Boolean)">
+            <summary>
+            Handle tracking status changes from the service
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.UpdateUI">
+            <summary>
+            Update UI elements based on current state
+            </summary>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.UpdateLocationText">
+            <summary>
+            Update location display text
+            </summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.IsLocationSharing">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.isLocationSharing"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.IsLoading">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.isLoading"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.StatusMessage">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.statusMessage"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.UserName">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.userName"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.CurrentLocation">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.currentLocation"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.LocationText">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.locationText"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.HasLocationPermission">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.hasLocationPermission"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.ShareButtonText">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.shareButtonText"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.ShareButtonColor">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.shareButtonColor"/>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.LastUpdateTime">
+            <inheritdoc cref="F:LocationTrackerApp.ViewModels.TrackingViewModel.lastUpdateTime"/>
+        </member>
+        <member name="M:LocationTrackerApp.ViewModels.TrackingViewModel.OnCurrentLocationChanged(LocationTrackerApp.Models.DeviceLocation)">
+            <summary>
+            Notify coordinate properties when location changes
+            </summary>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.TrackingViewModel.toggleLocationSharingCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.TrackingViewModel.ToggleLocationSharingCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.ToggleLocationSharingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.TrackingViewModel.ToggleLocationSharingAsync"/>.</summary>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.TrackingViewModel.refreshLocationCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.TrackingViewModel.RefreshLocationCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.RefreshLocationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.TrackingViewModel.RefreshLocationAsync"/>.</summary>
+        </member>
+        <member name="F:LocationTrackerApp.ViewModels.TrackingViewModel.logoutCommand">
+            <summary>The backing field for <see cref="P:LocationTrackerApp.ViewModels.TrackingViewModel.LogoutCommand"/>.</summary>
+        </member>
+        <member name="P:LocationTrackerApp.ViewModels.TrackingViewModel.LogoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:LocationTrackerApp.ViewModels.TrackingViewModel.LogoutAsync"/>.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RememberMe">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RememberMe" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLocationSharing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLocationSharing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StatusMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StatusMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LocationText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LocationText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HasLocationPermission">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HasLocationPermission" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ShareButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ShareButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ShareButtonColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ShareButtonColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastUpdateTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastUpdateTime" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RememberMe">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RememberMe" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLocationSharing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLocationSharing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StatusMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StatusMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LocationText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LocationText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HasLocationPermission">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HasLocationPermission" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ShareButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ShareButtonText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ShareButtonColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ShareButtonColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastUpdateTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastUpdateTime" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions">
+            <summary>
+            A helper type with generated validation stubs for types deriving from <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservableValidator"/>.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(LocationTrackerApp.ViewModels.LoginViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:LocationTrackerApp.ViewModels.LoginViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:LocationTrackerApp.ViewModels.LoginViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(LocationTrackerApp.ViewModels.RegisterViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:LocationTrackerApp.ViewModels.RegisterViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:LocationTrackerApp.ViewModels.RegisterViewModel"/> objects.</returns>
+        </member>
+    </members>
+</doc>

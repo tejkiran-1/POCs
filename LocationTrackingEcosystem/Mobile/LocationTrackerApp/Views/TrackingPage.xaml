@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="LocationTrackerApp.Views.TrackingPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:LocationTrackerApp.ViewModels"
+             x:DataType="viewmodels:TrackingViewModel"
+             Title="Location Tracker"
+             BackgroundColor="#F8F9FA">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        
+        <Frame Grid.Row="0" 
+               BackgroundColor="White" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="20,15,20,20">
+            <Grid ColumnDefinitions="*, Auto">
+                <StackLayout Grid.Column="0">
+                    <Label Text="{Binding UserName, StringFormat='Hello, {0}'}" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           TextColor="#1FA2FF" />
+                    <Label Text="{Binding StatusMessage}" 
+                           FontSize="14" 
+                           TextColor="#666666" />
+                </StackLayout>
+                
+                <Button Grid.Column="1" 
+                        Text="Logout" 
+                        Command="{Binding LogoutCommand}"
+                        BackgroundColor="#FF6B6B" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        Padding="15,8" 
+                        FontSize="14" />
+            </Grid>
+        </Frame>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <StackLayout Spacing="20">
+                
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        <Label Text="Current Location" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#333333" 
+                               Margin="0,0,0,10" />
+                        
+                        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto">
+                            <Label Grid.Row="0" Grid.Column="1" 
+                                   Text="{Binding CurrentLocation, StringFormat='Lat: {0:F6}'}" 
+                                   FontSize="14" 
+                                   TextColor="#666666" />
+                            
+                            <Label Grid.Row="1" Grid.Column="1" 
+                                   Text="{Binding CurrentLongitude, StringFormat='Lng: {0:F6}'}" 
+                                   FontSize="14" 
+                                   TextColor="#666666" />
+                            
+                            <Label Grid.Row="2" Grid.Column="1" 
+                                   Text="{Binding LastUpdateTime, StringFormat='Updated: {0:HH:mm:ss}'}" 
+                                   FontSize="12" 
+                                   TextColor="#999999" 
+                                   Margin="0,5,0,0" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        <Label Text="Tracking Controls" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#333333" 
+                               Margin="0,0,0,15" />
+                        
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="15">
+                            <Button Grid.Column="0" 
+                                    Text="Start Tracking" 
+                                    Command="{Binding ToggleTrackingCommand}"
+                                    BackgroundColor="#1FA2FF" 
+                                    TextColor="White" 
+                                    CornerRadius="25" 
+                                    HeightRequest="50" 
+                                    FontSize="16" 
+                                    FontAttributes="Bold" />
+                            
+                            <Button Grid.Column="1" 
+                                    Text="Update Now" 
+                                    Command="{Binding UpdateLocationCommand}"
+                                    BackgroundColor="#12D8FA" 
+                                    TextColor="White" 
+                                    CornerRadius="25" 
+                                    HeightRequest="50" 
+                                    FontSize="16" />
+                        </Grid>
+
+                        <Label Text="{Binding TrackingStatusText}" 
+                               FontSize="14" 
+                               TextColor="#666666" 
+                               HorizontalOptions="Center"
+                               Margin="0,15,0,0" />
+                    </StackLayout>
+                </Frame>
+
+                <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                                  IsVisible="{Binding IsLoading}"
+                                  Color="#1FA2FF" 
+                                  HeightRequest="50" />
+
+                <Label Text="{Binding ErrorMessage}" 
+                       TextColor="#D63031" 
+                       FontSize="14" 
+                       HorizontalOptions="Center" 
+                       IsVisible="{Binding HasError}" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
